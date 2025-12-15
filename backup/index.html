@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Perbaikan Elegan</title>
+    <style>
+        body { font-family: 'Georgia', serif; margin: 0; padding: 0; background: #ffffff; color: #000000; line-height: 1.6; }
+        header { border-bottom: 1px solid #dddddd; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; position: relative; }
+        .left-nav, .right-nav { display: flex; gap: 30px; }
+        .left-nav a, .right-nav a { text-decoration: none; color: #000; font-size: 18px; transition: color 0.3s; }
+        .left-nav a:hover, .right-nav a:hover { color: #333366; }
+        .logo { position: absolute; left: 50%; transform: translateX(-50%); font-size: 32px; font-weight: bold; color: #000; white-space: nowrap; }
+        .logo span { font-size: 40px; margin-right: 10px; }
+        .dark-toggle { font-size: 24px; cursor: pointer; margin-left: 20px; }
+        
+        /* Search di bawah header */
+        .search-container { max-width: 800px; margin: 40px auto; text-align: center; padding: 0 20px; }
+        input[type="text"] { padding: 12px 20px; font-size: 18px; border: 1px solid #cccccc; width: 70%; max-width: 600px; }
+        button { padding: 12px 24px; background: #000; color: #fff; border: none; cursor: pointer; font-size: 18px; }
+        button:hover { background: #333; }
+        
+        /* Hamburger untuk mobile */
+        .hamburger { display: none; font-size: 30px; cursor: pointer; }
+        
+        /* Mobile menu - PERBAIKAN DI SINI */
+        .mobile-menu { 
+            display: none; /* Pastikan hidden default */
+            flex-direction: column; 
+            position: absolute; 
+            top: 80px; 
+            left: 0; 
+            right: 0; 
+            background: #fff; 
+            border-bottom: 1px solid #ddd; 
+            padding: 20px; 
+            text-align: center; 
+            gap: 20px;
+            z-index: 1000;
+        }
+        .mobile-menu.active { 
+            display: flex; /* Hanya muncul saat active */
+        }
+        .mobile-menu a { font-size: 20px; text-decoration: none; color: #000; }
+        .mobile-menu .dark-toggle { font-size: 28px; }
+        
+        @media (max-width: 900px) {
+            .left-nav, .right-nav { display: none; }
+            .hamburger { display: block; position: absolute; left: 20px; }
+            .logo { position: static; transform: none; margin: 0 auto; }
+            .search-container { margin-top: 20px; } /* Kurangi margin jika menu terbuka */
+            input[type="text"] { width: 90%; }
+        }
+        
+        main { max-width: 1000px; margin: 0 auto; padding: 0 20px; text-align: center; }
+        h1 { font-size: 36px; margin-bottom: 20px; }
+        .placeholder { font-size: 18px; color: #666; margin: 40px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        
+        <div class="left-nav">
+            <a href="#">Home</a>
+            <a href="#">Populer</a>
+        </div>
+        
+        <a href="#" class="logo"><span>⚙️🔧</span> Panduan Perbaikan</a>
+        
+        <div class="right-nav">
+            <a href="#">Trending</a>
+            <a href="#">Favorit</a>
+            <span class="dark-toggle" title="Dark/Light Mode">🌙</span>
+        </div>
+    </header>
+    
+    <!-- Mobile menu - sekarang aman tidak muncul otomatis -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#">Home</a>
+        <a href="#">Populer</a>
+        <a href="#">Trending</a>
+        <a href="#">Favorit</a>
+        <span class="dark-toggle">🌙</span>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="query" placeholder="Cari panduan perbaikan..." />
+        <button onclick="search()">Cari</button>
+    </div>
+
+    <main>
+        <h1>Selamat Datang di Panduan Perbaikan Elegan</h1>
+        <p class="placeholder">Gunakan pencarian atau menu di atas untuk menjelajahi panduan dari iFixit.<br>
+        (Bug mobile menu sudah diperbaiki – sekarang hidden sampai hamburger diklik!)</p>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        function search() {
+            alert('Fungsi pencarian siap – integrasikan kode iFixit di sini!');
+        }
+
+        document.getElementById('query').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') search();
+        });
+    </script>
+</body>
+</html>

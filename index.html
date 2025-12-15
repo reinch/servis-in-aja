@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servisin Boss</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        
+        <div class="left-nav">
+            <a href="#" onclick="loadHome(); return false;">Home</a>
+            <a href="#" onclick="loadPopular(); return false;">Populer</a>
+        </div>
+        
+        <a href="#" class="logo" onclick="loadHome(); return false;"><span>⚙️🔧</span>Servis-in Aja</a>
+        
+        <div class="right-nav">
+            <a href="#" onclick="loadTrending(); return false;">Trending</a>
+            <a href="#" onclick="loadFavorites(); return false;">Favorit</a>
+            <span class="dark-toggle" onclick="toggleDarkMode()" title="Dark/Light Mode">🌙</span>
+        </div>
+    </header>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#" onclick="loadHome(); toggleMenu(); return false;">Home</a>
+        <a href="#" onclick="loadPopular(); toggleMenu(); return false;">Populer</a>
+        <a href="#" onclick="loadTrending(); toggleMenu(); return false;">Trending</a>
+        <a href="#" onclick="loadFavorites(); toggleMenu(); return false;">Favorit</a>
+        <span class="dark-toggle" onclick="toggleDarkMode(); toggleMenu();">🌙</span>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="query" placeholder="Cari panduan perbaikan untuk memulai..." />
+        <button onclick="performSearch()">Cari</button>
+    </div>
+
+    <main id="main-content">
+        <h2>Selamat Datang di Website Panduan Perbaikan Segala Hal</h2>
+        <!-- <p class="placeholder">Cari untuk memulai</p> -->
+        
+        <div id="loading" style="display:none; margin:60px; font-style:italic; text-align:center;">Sedang memuat dari iFixit API...</div>
+        <div id="results"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

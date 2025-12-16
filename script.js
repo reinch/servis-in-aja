@@ -155,3 +155,50 @@ loadHome();
 document.getElementById('query').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') performSearch();
 });
+
+function loadPopular() {
+  resultsDiv.innerHTML = `
+    <section class="popular-section">
+      <h2>🔥 Panduan Populer</h2>
+      <p class="subtitle">Panduan perbaikan yang paling sering dicari</p>
+
+      <div class="popular-grid">
+        <div class="popular-card" onclick="searchTopic('iphone')">
+          <span class="icon">📱</span>
+          <h3>iPhone</h3>
+          <p>Layar, baterai, kamera</p>
+        </div>
+
+        <div class="popular-card" onclick="searchTopic('laptop')">
+          <span class="icon">💻</span>
+          <h3>Laptop</h3>
+          <p>Keyboard, LCD, overheating</p>
+        </div>
+
+        <div class="popular-card" onclick="searchTopic('motorcycle')">
+          <span class="icon">🏍️</span>
+          <h3>Motor</h3>
+          <p>Mesin, rem, kelistrikan</p>
+        </div>
+
+        <div class="popular-card" onclick="searchTopic('air conditioner')">
+          <span class="icon">❄️</span>
+          <h3>AC</h3>
+          <p>Tidak dingin, bocor</p>
+        </div>
+
+        <div class="popular-card" onclick="searchTopic('television')">
+          <span class="icon">📺</span>
+          <h3>TV</h3>
+          <p>Gambar gelap, mati total</p>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function searchTopic(keyword) {
+  document.getElementById('query').value = keyword;
+  performSearch(); // langsung cari
+}
+

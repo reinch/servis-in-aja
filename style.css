@@ -239,3 +239,48 @@ h1 {
     padding: 8px;
     z-index: 10;
 }
+
+.popular-section {
+  padding: 30px;
+  text-align: center;
+}
+
+.popular-section h2 {
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.popular-card {
+  background: var(--card-bg, #f4f4f4);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+body.dark .popular-card {
+  background: #1e1e1e;
+}
+
+.popular-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.popular-card .icon {
+  font-size: 36px;
+}
+
+.popular-card h3 {
+  margin: 10px 0 5px;
+}

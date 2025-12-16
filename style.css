@@ -284,3 +284,79 @@ body.dark .popular-card {
 .popular-card h3 {
   margin: 10px 0 5px;
 }
+/* ===== HOME ===== */
+.home-hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.home-hero h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.home-hero p {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.home-actions button {
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+  background: #0a58ca;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.home-actions button:hover {
+  background: #084298;
+}
+
+/* FEATURES */
+.home-features {
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.feature-card span {
+  font-size: 32px;
+}
+
+.feature-card h3 {
+  margin: 10px 0;
+}
+
+/* CTA */
+.home-cta {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #0a58ca, #0d6efd);
+  color: white;
+  border-radius: 20px;
+}
+
+/* DARK MODE */
+.dark-mode .feature-card {
+  background: #1e1e1e;
+}

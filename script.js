@@ -139,9 +139,19 @@ function toggleFavorite(url, elem) {
     }
 }
 
+//fitur darkmode
 function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    // Kamu bisa tambah styling dark mode nanti
+  document.body.classList.toggle('dark-mode');
+
+  const icon = document.querySelector('.dark-toggle');
+
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('darkMode', 'on');
+    icon.textContent = '☀️';
+  } else {
+    localStorage.setItem('darkMode', 'off');
+    icon.textContent = '🌙';
+  }
 }
 
 function toggleMenu() {

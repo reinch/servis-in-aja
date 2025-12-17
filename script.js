@@ -149,7 +149,59 @@ function toggleMenu() {
 }
 
 // Load Home saat pertama kali
-loadHome();
+function loadHome() {
+  document.getElementById('page-title').textContent =
+    'Selamat Datang di Website Panduan Perbaikan Segala Hal';
+
+  resultsDiv.innerHTML = `
+    <section class="home-hero">
+      <h1>🔧 Servis-in Aja</h1>
+      <p>
+        Cari panduan perbaikan gadget, elektronik, kendaraan,
+        hingga peralatan rumah tangga dari sumber terpercaya.
+      </p>
+
+      <div class="home-actions">
+        <button onclick="searchTopic('iphone')">📱 iPhone</button>
+        <button onclick="searchTopic('laptop')">💻 Laptop</button>
+        <button onclick="searchTopic('motorcycle')">🏍️ Motor</button>
+        <button onclick="searchTopic('television')">📺 TV</button>
+        <button onclick="searchTopic('air conditioner')">❄️ AC</button>
+      </div>
+    </section>
+
+    <section class="home-features">
+      <div class="feature-card">
+        <span>📚</span>
+        <h3>Panduan Lengkap</h3>
+        <p>Langkah perbaikan detail & mudah dipahami.</p>
+      </div>
+
+      <div class="feature-card">
+        <span>❤️</span>
+        <h3>Simpan Favorit</h3>
+        <p>Tandai panduan penting agar mudah dibuka kembali.</p>
+      </div>
+
+      <div class="feature-card">
+        <span>🌙</span>
+        <h3>Dark Mode</h3>
+        <p>Nyaman dibaca siang maupun malam.</p>
+      </div>
+
+      <div class="feature-card">
+        <span>⚡</span>
+        <h3>Cepat & Ringan</h3>
+        <p>Tanpa login, tanpa ribet, langsung cari.</p>
+      </div>
+    </section>
+
+    <section class="home-cta">
+      <h2>Mulai Cari Panduan Sekarang</h2>
+      <p>Ketik kata kunci di kolom pencarian di atas</p>
+    </section>
+  `;
+}
 
 // Enter untuk search
 document.getElementById('query').addEventListener('keypress', (e) => {
